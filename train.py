@@ -109,7 +109,7 @@ def test(test_data, convnet, siamese_net, train_embedding_list, train_id_list, i
     test_prediction_list = [classify(image_embedding, train_embedding_list, train_id_list) for image_embedding in test_embedding_list]
     test_evaluation = pd.DataFrame({'Id': test_id_list, 'predicted': test_prediction_list}, columns=['Id', 'predicted'])
 
-    weights_folder = 'weights/' + '2018.02.22 19:17:11' + '/'
+    weights_folder = 'weights/2018.04.22.07.47.35_45/'
 
     convnet.load_weights(weights_folder + 'convnet_weights')
     siamese_net.load_weights(weights_folder + 'siamese_weights')
@@ -152,7 +152,7 @@ def test_online():
         convnet = build_model_128()
     else:
         convnet = build_model_256()
-    weights_folder = 'weights/2018.04.22.07.47.35_38/'
+    weights_folder = 'weights/2018.04.23.03.42.18_196/'
     #model = load_model(weights_folder + 'convnet_weights')
     convnet.load_weights(weights_folder + 'convnet_weights')
     embedding_list = convnet.predict(np.stack(image_list))
